@@ -8,6 +8,7 @@ class SmileyManager(models.Manager):
 class Smiley(models.Model):
     pattern = models.CharField(max_length=50)
     description = models.CharField(max_length=100, blank=True)
+    default = models.CharField(max_length=10, blank=True, help_text="Default representation for editing fields.")
     image = models.ImageField(upload_to='smileys')
     is_regex = models.BooleanField(blank=True)
     is_active = models.BooleanField(default=True, blank=True)
